@@ -11,7 +11,7 @@ const GameScreen = (props) => {
 
   // Llamar la función de generar array cards aleatorio
   useEffect( () => {
-    setCardsArr(arrCardRand(props.numCards, props.theme)); // 12 porque queremos 12 cards
+    setCardsArr(arrCardRand(props.numCards, props.theme)); 
   }, [props.numCards, props.theme]);
 
   // Rotate function
