@@ -22,7 +22,7 @@ function App() {
 
   // Cambiar la temática
   const changeTheme = () => {
-    setTheme(theme === 3 ? 0 : theme + 1)
+    setTheme(theme === 3 ? 0 : theme + 1);
   };
 
   // Cambiar la dificultad

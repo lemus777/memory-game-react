@@ -11,8 +11,8 @@ const GameScreen = (props) => {
 
   // Llamar la función de generar array cards aleatorio
   useEffect( () => {
-    setCardsArr(arrCardRand(props.numCards)); // 12 porque queremos 12 cards
-  }, [props.numCards]);
+    setCardsArr(arrCardRand(props.numCards, props.theme)); // 12 porque queremos 12 cards
+  }, [props.numCards, props.theme]);
 
   // Rotate function
   const rotate = (id) => {
@@ -79,6 +79,7 @@ const GameScreen = (props) => {
             .sort( (a,b) => a.id - b.id)
             .map( card => {
               return <Card
+                theme={card.theme}
                 key={card.id}
                 id={card.id}
                 rotate={card.rotate}

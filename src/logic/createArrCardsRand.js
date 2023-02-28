@@ -1,8 +1,24 @@
 import { images } from './images';
 
-function arrCardRand(numCards) {
+function arrCardRand(numCards, theme) {
   const halfCards = numCards / 2;
   const arr = [];
+  let ajuste = 0;
+  // filtrade de images dependiendo del tema
+  switch(theme) {
+    case 1:
+      ajuste = 6;
+      break;
+    case 2:
+      ajuste = 12;
+      break;
+    case 3:
+      ajuste = 18;
+      break;
+    default:
+      ajuste = 0;
+  }
+
   let i=0, j=0;
   while ( i < numCards ) {
     if( j === halfCards ) j = 0;
@@ -12,7 +28,7 @@ function arrCardRand(numCards) {
       arr.push(
         {
           id: random,
-          image: images[j],
+          image: images[j + ajuste],
           bind: j,
           rotate: false,
           validating: 0,

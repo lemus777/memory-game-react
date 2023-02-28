@@ -10,7 +10,7 @@ const Card = (props) => {
           <i className="fas fa-question"></i>
         </div>
         <div className="card--back middle">
-          <i className={props.image}></i>
+          <img src={require(`../images/${props.image}`)} alt={props.id} />
         </div>
       </div>
     </div>
