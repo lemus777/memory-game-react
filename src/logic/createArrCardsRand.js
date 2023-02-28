@@ -7,13 +7,13 @@ function arrCardRand(numCards, theme) {
   // filtrade de images dependiendo del tema
   switch(theme) {
     case 1:
-      ajuste = 6;
+      ajuste = 10;
       break;
     case 2:
-      ajuste = 12;
+      ajuste = 20;
       break;
     case 3:
-      ajuste = 18;
+      ajuste = 30;
       break;
     default:
       ajuste = 0;
