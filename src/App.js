@@ -8,6 +8,7 @@ function App() {
   const [theme, setTheme] = useState(0); // 0 = Avengers, 1 = Disney, 2 = Harry Potter, 3 = Star Wars
   const [level, setLevel] = useState(0); // 0 = facil, 1 = medio, 2 = dificil
   const [stateGame, setStateGame] = useState(0); // 0 = no iniciado, 1 = en proceso, 2 = finalizado
+  const [selection, setSelection] = useState('Select theme')
 
   // Número de cartas según nivel
   const cardsByLevel = {
@@ -21,13 +22,32 @@ function App() {
   const [miliSeconds, setMiliSeconds] = useState(0);
 
   // Cambiar la temática
-  const changeTheme = () => {
-    setTheme(theme === 3 ? 0 : theme + 1);
-  };
+  //const changeTheme = () => {
+  //  setTheme(theme === 3 ? 0 : theme + 1);
+  //};
+  const chooseAvengers = () => {
+    setTheme(0);
+    setSelection('Theme selected: Avengers');
+  }
+
+  const chooseDisney = () => {
+    setTheme(1);
+    setSelection('Theme selected: Disney');
+  }
+
+  const chooseHP = () => {
+    setTheme(2);
+    setSelection('Theme selected: Harry Potter');
+  }
+
+  const chooseSW = () => {
+    setTheme(3);
+    setSelection('Theme selected: Star Wars');
+  }
 
   // Cambiar la dificultad
   const changeLevel = () => {
-    setLevel(level === 2 ? 0 : level + 1)
+    setLevel(level === 2 ? 0 : level + 1);
   }
 
   // Determinar estado del juego
@@ -42,6 +62,7 @@ function App() {
     setTheme(0);
     setLevel(0);
     resetTime();
+    setSelection('Select theme')
   }
 
   // Métodos para el reloj
@@ -73,9 +94,14 @@ function App() {
     <div className="container middle">
       { stateGame === 0 ?
         <MainScreen 
+          selection={selection}
           theme={theme}
           level={level}
-          changeTheme={changeTheme}
+          //changeTheme={changeTheme}
+          chooseAvengers={chooseAvengers}
+          chooseDisney={chooseDisney}
+          chooseHP={chooseHP}
+          chooseSW={chooseSW}
           changeLevel={changeLevel}
           setStart={changeStateGame}
         /> : stateGame === 1 ?
