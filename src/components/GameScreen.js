@@ -33,7 +33,7 @@ const GameScreen = (props) => {
   const validate = () => {
     const validatingCards = cardsArr.filter( card => card.validating === 1 );
 
-    if( validatingCards.length === 2) {
+    if( validatingCards.length >= 2) { // Igual o mayor a dos para evitar el problema de que si volteamos tres rápido deja de validar
 
       if( validatingCards[0].bind !== validatingCards[1].bind) {
         // validación no coincide
